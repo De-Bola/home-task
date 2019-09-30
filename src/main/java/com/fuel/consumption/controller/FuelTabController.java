@@ -27,13 +27,15 @@ public class FuelTabController {
     }
 
     @PostMapping("/add/tabs")
-    public ResponseEntity<?> addFuelDataInBulk(@Valid @RequestBody List<FuelTabDTO> fuelTabDTOList){
-        return new ResponseEntity<>(fuelTabServiceImpl.addFuelDataInBatch(fuelTabDTOList), HttpStatus.CREATED);
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<FuelTab> addFuelDataInBulk(@Valid @RequestBody List<FuelTabDTO> fuelTabDTOList){
+        return fuelTabServiceImpl.addFuelDataInBatch(fuelTabDTOList);
     }
 
     @PostMapping("/add" )
-    public ResponseEntity<?> addFuelData(@Valid @RequestBody FuelTabDTO fuelTabDTO){
-         return new ResponseEntity<>(fuelTabServiceImpl.addFuelData(fuelTabDTO), HttpStatus.CREATED);
+    @ResponseStatus(HttpStatus.CREATED)
+    public FuelTab addFuelData(@Valid @RequestBody FuelTabDTO fuelTabDTO){
+         return fuelTabServiceImpl.addFuelData(fuelTabDTO);
     }
 
 
@@ -63,7 +65,7 @@ public class FuelTabController {
     }
 
     @GetMapping("/{driverId}/records/{month}")
-    public ResponseEntity<?> getConsumptionByMonthAndId(@PathVariable Long driverId, @PathVariable Integer month) throws InvalidMonthNumberException {
+    public ResponseEntity<List<ConsumptionRecordDTO>> getConsumptionByMonthAndId(@PathVariable Long driverId, @PathVariable Integer month) throws InvalidMonthNumberException {
         return new ResponseEntity<>(fuelTabServiceImpl.getConsumptionRecordsByMonthAndId(driverId, month), HttpStatus.OK);
     }
 
