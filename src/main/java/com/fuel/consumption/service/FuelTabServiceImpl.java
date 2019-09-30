@@ -14,6 +14,7 @@ import com.fuel.consumption.repository.BulkInsertRepository;
 import com.fuel.consumption.repository.FuelTabRepository;
 import com.fuel.consumption.util.Adapters;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -116,15 +117,27 @@ public class FuelTabServiceImpl implements FuelTabService {
         return recordDTOS;
     }
 
- /*   @Override
+   @Override
     public List<MonthlyStatsDTO> getMonthlyStatistics(){
-        List<MonthlyStats> statsList1 = fuelTabRepository.getMonthlyStatistics();
+        List<MonthlyStats> statsList1 = fuelTabRepository.getMonthlyStatistics(FuelType.D.getFuelTypes());
+        List<MonthlyStats> statsList2 = fuelTabRepository.getMonthlyStatistics(FuelType.NINETY_FIVE.getFuelTypes());
+        List<MonthlyStats> statsList3 = fuelTabRepository.getMonthlyStatistics(FuelType.NINETY_EIGHT.getFuelTypes());
+
         List<MonthlyStatsDTO> statsDTOList1 = new ArrayList<>();
         statsList1.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
             statsDTOList1.add(statsDTO);});
+       List<MonthlyStatsDTO> statsDTOList2 = new ArrayList<>();
+       statsList2.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
+           statsDTOList2.add(statsDTO);});
+       List<MonthlyStatsDTO> statsDTOList3 = new ArrayList<>();
+       statsList3.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
+           statsDTOList3.add(statsDTO);});
+
+       statsDTOList1.addAll(statsDTOList2);
+       statsDTOList1.addAll(statsDTOList3);
+
         return statsDTOList1;
     }
-
 
     @Override
     public List<MonthlyStatsDTO> getMonthlyStatisticsById(Long driverId) {
@@ -136,7 +149,6 @@ public class FuelTabServiceImpl implements FuelTabService {
 
         return monthlyStatsDTOList;
     }
-*/
 
     @Override
     public void deleteAllRecords(){

@@ -83,7 +83,7 @@ public class Adapters {
         statsDTO.setPurchasedVolume(addEnumToValue(stats.getPurchasedVolume(), Measurements.LITRE));
         statsDTO.setAveragePrice(addEnumToValue(stats.getAveragePrice(), Currencies.EUR));
         statsDTO.setSum(addEnumToValue(stats.getSum(), Currencies.EUR));
-        statsDTO.setMonthAndYear(getMonthAndYear(stats.getPurchaseDate()));
+        statsDTO.setMonthAndYear(stats.getPurchaseDate());
         return statsDTO;
     }
 

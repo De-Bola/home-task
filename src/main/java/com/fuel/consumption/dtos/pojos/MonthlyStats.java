@@ -1,16 +1,16 @@
 package com.fuel.consumption.dtos.pojos;
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
 
 public class MonthlyStats {
 
     private String fuelType;
     private Double purchasedVolume;
     private Double averagePrice;
-    private Double sum;
-    private LocalDate purchaseDate;
+    private BigDecimal sum;
+    private String purchaseDate;
 
-    public MonthlyStats(String fuelType, Double purchasedVolume, Double averagePrice, Double sum, LocalDate purchaseDate) {
+    public MonthlyStats(String fuelType, Double purchasedVolume, Double averagePrice, BigDecimal sum, String purchaseDate) {
         this.fuelType = fuelType;
         this.purchasedVolume = purchasedVolume;
         this.averagePrice = averagePrice;
@@ -42,19 +42,19 @@ public class MonthlyStats {
         this.averagePrice = averagePrice;
     }
 
-    public Double getSum() {
+    public BigDecimal getSum() {
         return sum;
     }
 
-    public void setSum(Double sum) {
+    public void setSum(BigDecimal sum) {
         this.sum = sum;
     }
 
-    public LocalDate getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(LocalDate purchaseDate) {
+    public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 }

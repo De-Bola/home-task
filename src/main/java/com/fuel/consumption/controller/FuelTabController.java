@@ -44,7 +44,7 @@ public class FuelTabController {
     @GetMapping("/{driverID}/tabs")
     public ResponseEntity<List<FuelTabDTO>> getAllFuelTabsByID(@PathVariable Long driverID){
         return new ResponseEntity<>(fuelTabServiceImpl.getAllByDriverID(driverID), HttpStatus.OK);
-    }*/
+    }
 
     @GetMapping("/sums/monthly")
     public ResponseEntity<List<SumDataDTO>> getTotalSpentAmount(){
@@ -56,7 +56,7 @@ public class FuelTabController {
         return new ResponseEntity<>(fuelTabServiceImpl.getMonthlySumByDriverId(driverID), HttpStatus.OK);
     }
 
-   /* @GetMapping("/records/{month}")
+    @GetMapping("/records/{month}")
     public ResponseEntity<List<ConsumptionRecordDTO>> getConsumptionByMonth(@PathVariable int month) throws InvalidMonthNumberException {
         return new ResponseEntity<>(fuelTabServiceImpl.getConsumptionRecordsByMonth(month), HttpStatus.OK);
     }
@@ -65,17 +65,17 @@ public class FuelTabController {
     public ResponseEntity<List<ConsumptionRecordDTO>> getConsumptionByMonthAndId(@PathVariable Long driverId, @PathVariable Integer month) throws InvalidMonthNumberException*//*, InvalidDriverIdException*//* {
         return new ResponseEntity<>(fuelTabServiceImpl.getConsumptionRecordsByMonthAndId(driverId, month), HttpStatus.OK);
     }*/
-/*
+
     @GetMapping("/monthly/statistics")
-    public ResponseEntity<?> getMonthlyStats(){
-        return new ResponseEntity<>(fuelTabServiceImpl.getMonthlyStatistics(), HttpStatus.OK);
+    public ResponseEntity<MonthlyStatsDTO> getMonthlyStats(){
+        return new ResponseEntity(fuelTabServiceImpl.getMonthlyStatistics(), HttpStatus.OK);
     }
 
     @GetMapping("/monthly/statistics/{driverId}")
-    public ResponseEntity<?> getMonthlyStatsById(@PathVariable Long driverId){
-        return new ResponseEntity<>(fuelTabServiceImpl.getMonthlyStatisticsById(driverId), HttpStatus.OK);
+    public ResponseEntity<MonthlyStatsDTO> getMonthlyStatsById(@PathVariable Long driverId){
+            return new ResponseEntity(fuelTabServiceImpl.getMonthlyStatisticsById(driverId), HttpStatus.OK);
     }
-*/
+
    @DeleteMapping("/delete/tabs")
     public ResponseEntity deleteRecords(){
         fuelTabServiceImpl.deleteAllRecords();
