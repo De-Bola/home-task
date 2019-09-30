@@ -14,6 +14,8 @@ import com.fuel.consumption.dtos.SumDataDTO;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Adapters {
@@ -41,14 +43,13 @@ public class Adapters {
         tabDTO.setPurchasedVolume(tab.getPurchasedVolume());
         tabDTO.setUnitPrice(tab.getUnitPrice());
         tabDTO.setFuelType(tab.getFuelType());
-       // tabDTO.setAmountPaid(tab.getAmountPaid());
         return tabDTO;
     }
 
     private LocalDateTime convertStringToLocalDate(String date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM.dd.yyyy", Locale.ENGLISH);
         LocalDate localDate = LocalDate.parse(date.trim(), formatter);
-        LocalTime localTime = LocalTime.of(12, 00);
+        LocalTime localTime = LocalTime.of(12, 0);
         return LocalDateTime.of(localDate, localTime);
     }
 
@@ -90,5 +91,14 @@ public class Adapters {
     public String addEnumToValue(Object value, Object enumTail){
         String output = String.valueOf(value)+" "+ String.valueOf(enumTail);
         return output.trim();
+    }
+
+    public List<MonthlyStatsDTO> getMonthlyStatsDTOS(List<MonthlyStats> statsList1) {
+        List<MonthlyStatsDTO> statsDTOList1 = new ArrayList<>();
+        statsList1.forEach(stats -> {
+            MonthlyStatsDTO statsDTO = convertMonthlyStatsToDto(stats);
+            statsDTOList1.add(statsDTO);
+        });
+        return statsDTOList1;
     }
 }

@@ -1,7 +1,6 @@
 package com.fuel.consumption.dtos.pojos;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class SumData {
     private String purchaseDate;

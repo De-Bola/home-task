@@ -217,6 +217,124 @@
     "unitPrice": 19.5
   },
   {
+    "driverID": 12345,
+    "fuelType": "D",
+    "purchaseDate": "01.01.2018",
+    "purchasedVolume": 4.5,
+    "unitPrice": 10.5
+  },
+  {
+    "driverID": 13345,
+    "fuelType": "98",
+    "purchaseDate": "01.01.2018",
+    "purchasedVolume": 5.5,
+    "unitPrice": 9.5
+  },
+  {
+    "driverID": 14345,
+    "fuelType": "98",
+    "purchaseDate": "01.01.2018",
+    "purchasedVolume": 6.5,
+    "unitPrice": 8.5
+  },
+  {
+    "driverID": 12345,
+    "fuelType": "95",
+    "purchaseDate": "01.02.2018",
+    "purchasedVolume": 4.5,
+    "unitPrice": 11.5
+  },{
+  "driverID": 13345,
+  "fuelType": "D",
+  "purchaseDate": "01.01.2018",
+  "purchasedVolume": 5.5,
+  "unitPrice": 9.5
+},{
+  "driverID": 14345,
+  "fuelType": "95",
+  "purchaseDate": "01.01.2018",
+  "purchasedVolume": 6.5,
+  "unitPrice": 8.5
+},{
+  "driverID": 12345,
+  "fuelType": "D",
+  "purchaseDate": "02.02.2018",
+  "purchasedVolume": 4.5,
+  "unitPrice": 10.5
+},
+  {
+    "driverID": 13345,
+    "fuelType": "98",
+    "purchaseDate": "02.11.2018",
+    "purchasedVolume": 5.5,
+    "unitPrice": 9.5
+  },
+  {
+    "driverID": 14345,
+    "fuelType": "98",
+    "purchaseDate": "02.01.2018",
+    "purchasedVolume": 6.5,
+    "unitPrice": 8.5
+  },
+  {
+    "driverID": 12345,
+    "fuelType": "95",
+    "purchaseDate": "02.20.2018",
+    "purchasedVolume": 4.5,
+    "unitPrice": 11.5
+  },{
+  "driverID": 13345,
+  "fuelType": "D",
+  "purchaseDate": "02.21.2018",
+  "purchasedVolume": 5.5,
+  "unitPrice": 9.5
+},{
+  "driverID": 14345,
+  "fuelType": "95",
+  "purchaseDate": "02.17.2018",
+  "purchasedVolume": 6.5,
+  "unitPrice": 8.5
+},{
+  "driverID": 12345,
+  "fuelType": "D",
+  "purchaseDate": "03.11.2018",
+  "purchasedVolume": 4.5,
+  "unitPrice": 10.5
+},
+  {
+    "driverID": 13345,
+    "fuelType": "98",
+    "purchaseDate": "04.21.2018",
+    "purchasedVolume": 5.5,
+    "unitPrice": 9.5
+  },
+  {
+    "driverID": 14345,
+    "fuelType": "98",
+    "purchaseDate": "05.26.2018",
+    "purchasedVolume": 6.5,
+    "unitPrice": 8.5
+  },
+  {
+    "driverID": 12345,
+    "fuelType": "95",
+    "purchaseDate": "06.03.2018",
+    "purchasedVolume": 4.5,
+    "unitPrice": 11.5
+  },{
+  "driverID": 13345,
+  "fuelType": "D",
+  "purchaseDate": "07.11.2018",
+  "purchasedVolume": 5.5,
+  "unitPrice": 9.5
+},{
+  "driverID": 14345,
+  "fuelType": "95",
+  "purchaseDate": "08.21.2018",
+  "purchasedVolume": 6.5,
+  "unitPrice": 8.5
+},
+  {
     "driverID": 14345,
     "fuelType": "D",
     "purchaseDate": "02.07.2018",

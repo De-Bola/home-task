@@ -14,11 +14,10 @@ import com.fuel.consumption.repository.BulkInsertRepository;
 import com.fuel.consumption.repository.FuelTabRepository;
 import com.fuel.consumption.util.Adapters;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class FuelTabServiceImpl implements FuelTabService {
@@ -123,15 +122,9 @@ public class FuelTabServiceImpl implements FuelTabService {
         List<MonthlyStats> statsList2 = fuelTabRepository.getMonthlyStatistics(FuelType.NINETY_FIVE.getFuelTypes());
         List<MonthlyStats> statsList3 = fuelTabRepository.getMonthlyStatistics(FuelType.NINETY_EIGHT.getFuelTypes());
 
-        List<MonthlyStatsDTO> statsDTOList1 = new ArrayList<>();
-        statsList1.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
-            statsDTOList1.add(statsDTO);});
-       List<MonthlyStatsDTO> statsDTOList2 = new ArrayList<>();
-       statsList2.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
-           statsDTOList2.add(statsDTO);});
-       List<MonthlyStatsDTO> statsDTOList3 = new ArrayList<>();
-       statsList3.forEach(stats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(stats);
-           statsDTOList3.add(statsDTO);});
+       List<MonthlyStatsDTO> statsDTOList1 = adapter.getMonthlyStatsDTOS(statsList1);
+       List<MonthlyStatsDTO> statsDTOList2 = adapter.getMonthlyStatsDTOS(statsList2);
+       List<MonthlyStatsDTO> statsDTOList3 = adapter.getMonthlyStatsDTOS(statsList3);
 
        statsDTOList1.addAll(statsDTOList2);
        statsDTOList1.addAll(statsDTOList3);
@@ -141,13 +134,18 @@ public class FuelTabServiceImpl implements FuelTabService {
 
     @Override
     public List<MonthlyStatsDTO> getMonthlyStatisticsById(Long driverId) {
-        List<MonthlyStats> monthlyStatsList = fuelTabRepository.getMonthlyStatisticsById(driverId);
-        List<MonthlyStatsDTO> monthlyStatsDTOList = new ArrayList<>();
+        List<MonthlyStats> monthlyStatsList1 = fuelTabRepository.getMonthlyStatisticsById(driverId, FuelType.D.getFuelTypes());
+        List<MonthlyStats> monthlyStatsList2 = fuelTabRepository.getMonthlyStatisticsById(driverId, FuelType.NINETY_FIVE.getFuelTypes());
+        List<MonthlyStats> monthlyStatsList3 = fuelTabRepository.getMonthlyStatisticsById(driverId, FuelType.NINETY_EIGHT.getFuelTypes());
 
-        monthlyStatsList.forEach(monthlyStats -> {MonthlyStatsDTO statsDTO = adapter.convertMonthlyStatsToDto(monthlyStats);
-        monthlyStatsDTOList.add(statsDTO);});
+        List<MonthlyStatsDTO> monthlyStatsDTOList1 = adapter.getMonthlyStatsDTOS(monthlyStatsList1);
+        List<MonthlyStatsDTO> monthlyStatsDTOList2 = adapter.getMonthlyStatsDTOS(monthlyStatsList2);
+        List<MonthlyStatsDTO> monthlyStatsDTOList3 = adapter.getMonthlyStatsDTOS(monthlyStatsList3);
 
-        return monthlyStatsDTOList;
+        monthlyStatsDTOList1.addAll(monthlyStatsDTOList2);
+        monthlyStatsDTOList1.addAll(monthlyStatsDTOList3);
+
+        return monthlyStatsDTOList1;
     }
 
     @Override

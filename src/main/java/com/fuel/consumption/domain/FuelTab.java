@@ -1,6 +1,9 @@
 package com.fuel.consumption.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -9,11 +12,16 @@ public class FuelTab {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull(message = "Driver Id cannot be null")
     private Long driverID;
     private String monthAndYear;
+    @NotNull(message = "Date fields cannot be null")
     private LocalDate purchaseDate;
+    @Min(value = 1)
     private Double purchasedVolume;
+    @Min(value = 1)
     private Double unitPrice;
+    @NotBlank(message = "Fuel type cannot be null")
     private String fuelType;
     private BigDecimal amountPaid;
     @Enumerated(EnumType.STRING)
