@@ -1,31 +1,27 @@
-package com.fuel.consumption.dtos;
+package com.fuel.consumption.dao.pojos;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
-public class FuelTabDTO {
-    private Long driverID;
-    private String purchaseDate;
-    private Double purchasedVolume;
-    private Double unitPrice;
+public class ConsumptionRecord {
+
     private String fuelType;
+    private Double purchasedVolume;
+    private LocalDate purchaseDate;
+    private Double unitPrice;
     private BigDecimal amountPaid;
-    private BigDecimal average;
+    private Long driverID;
 
-    public BigDecimal getAverage() {
-        return average;
-    }
-
-    public void setAverage(BigDecimal average) {
-        this.average = average;
-    }
-
-    public void setAmountPaid(BigDecimal amountPaid) {
+    public ConsumptionRecord(String fuelType, Double purchasedVolume, LocalDate purchaseDate, Double unitPrice,
+                             BigDecimal amountPaid, Long driverID) {
+        this.fuelType = fuelType;
+        this.purchasedVolume = purchasedVolume;
+        this.purchaseDate = purchaseDate;
+        this.unitPrice = unitPrice;
         this.amountPaid = amountPaid;
+        this.driverID = driverID;
     }
 
-    public BigDecimal getAmountPaid() {
-        return amountPaid;
-    }
     public Long getDriverID() {
         return driverID;
     }
@@ -34,11 +30,11 @@ public class FuelTabDTO {
         this.driverID = driverID;
     }
 
-    public String getPurchaseDate() {
+    public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(String purchaseDate) {
+    public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -64,5 +60,13 @@ public class FuelTabDTO {
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
+    }
+
+    public BigDecimal getAmountPaid() {
+        return amountPaid;
+    }
+
+    public void setAmountPaid(BigDecimal amountPaid) {
+        this.amountPaid = amountPaid;
     }
 }

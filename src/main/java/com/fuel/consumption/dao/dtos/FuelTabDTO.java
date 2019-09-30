@@ -1,27 +1,31 @@
-package com.fuel.consumption.dtos.pojos;
+package com.fuel.consumption.dao.dtos;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
-public class ConsumptionRecord {
-
-    private String fuelType;
-    private Double purchasedVolume;
-    private LocalDate purchaseDate;
-    private Double unitPrice;
-    private BigDecimal amountPaid;
+public class FuelTabDTO {
     private Long driverID;
+    private String purchaseDate;
+    private Double purchasedVolume;
+    private Double unitPrice;
+    private String fuelType;
+    private BigDecimal amountPaid;
+    private BigDecimal average;
 
-    public ConsumptionRecord(String fuelType, Double purchasedVolume, LocalDate purchaseDate, Double unitPrice,
-                             BigDecimal amountPaid, Long driverID) {
-        this.fuelType = fuelType;
-        this.purchasedVolume = purchasedVolume;
-        this.purchaseDate = purchaseDate;
-        this.unitPrice = unitPrice;
-        this.amountPaid = amountPaid;
-        this.driverID = driverID;
+    public BigDecimal getAverage() {
+        return average;
     }
 
+    public void setAverage(BigDecimal average) {
+        this.average = average;
+    }
+
+    public void setAmountPaid(BigDecimal amountPaid) {
+        this.amountPaid = amountPaid;
+    }
+
+    public BigDecimal getAmountPaid() {
+        return amountPaid;
+    }
     public Long getDriverID() {
         return driverID;
     }
@@ -30,11 +34,11 @@ public class ConsumptionRecord {
         this.driverID = driverID;
     }
 
-    public LocalDate getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(LocalDate purchaseDate) {
+    public void setPurchaseDate(String purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -60,13 +64,5 @@ public class ConsumptionRecord {
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
-    }
-
-    public BigDecimal getAmountPaid() {
-        return amountPaid;
-    }
-
-    public void setAmountPaid(BigDecimal amountPaid) {
-        this.amountPaid = amountPaid;
     }
 }

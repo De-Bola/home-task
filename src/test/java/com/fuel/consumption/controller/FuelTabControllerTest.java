@@ -1,10 +1,9 @@
 package com.fuel.consumption.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fuel.consumption.dtos.ConsumptionRecordDTO;
-import com.fuel.consumption.dtos.FuelTabDTO;
-import com.fuel.consumption.exceptions.InvalidMonthNumberException;
+import com.fuel.consumption.dao.dtos.ConsumptionRecordDTO;
+import com.fuel.consumption.dao.dtos.FuelTabDTO;
+import com.fuel.consumption.util.exceptions.InvalidMonthNumberException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

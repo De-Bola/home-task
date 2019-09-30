@@ -1,4 +1,4 @@
-package com.fuel.consumption.dtos;
+package com.fuel.consumption.dao.dtos;
 
 public class MonthlyStatsDTO {
 

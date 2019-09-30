@@ -1,4 +1,4 @@
-package com.fuel.consumption.dtos.pojos;
+package com.fuel.consumption.dao.pojos;
 
 import java.math.BigDecimal;
 

@@ -2,11 +2,11 @@
 package com.fuel.consumption.controller;
 
 import com.fuel.consumption.domain.FuelTab;
-import com.fuel.consumption.dtos.ConsumptionRecordDTO;
-import com.fuel.consumption.dtos.FuelTabDTO;
-import com.fuel.consumption.dtos.MonthlyStatsDTO;
-import com.fuel.consumption.dtos.SumDataDTO;
-import com.fuel.consumption.exceptions.InvalidMonthNumberException;
+import com.fuel.consumption.dao.dtos.ConsumptionRecordDTO;
+import com.fuel.consumption.dao.dtos.FuelTabDTO;
+import com.fuel.consumption.dao.dtos.MonthlyStatsDTO;
+import com.fuel.consumption.dao.dtos.SumDataDTO;
+import com.fuel.consumption.util.exceptions.InvalidMonthNumberException;
 import com.fuel.consumption.service.FuelTabServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
